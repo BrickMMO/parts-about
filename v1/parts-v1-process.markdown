@@ -2,7 +2,7 @@
 
 ## Process
 
-This applciation directory will include information on the following:
+This applciation will provide a directory with the following information:
 
 1. A list of LEGO® themes.
 2. Information on a theme and a list of sets within a chosen theme.
@@ -10,13 +10,13 @@ This applciation directory will include information on the following:
 4. Information on individual parts.
 5. Information on individual minifigures.
 
-There is no backend for this project. Currenly all backend functionality in completed by importing the raw [Rebrickable](https://rebrickable.com/downloads/) SQL files. In the future the import can be automated and run once a month using [CRON](https://en.wikipedia.org/wiki/Cron).
+There is no backend for this project. Currently all backend functionality in completed by importing the raw [Rebrickable](https://rebrickable.com/downloads/) SQL files. In the future the import can be automated and run once a month using [CRON](https://en.wikipedia.org/wiki/Cron).
 
 *** 
 
 ### Completed by Instructor
 
-The [parts-v1](https://github.com/BrickMMO/parts-v1) includes a basic PHP core also used in [flow-v1](https://github.com/BrickMMO/flow-v2) and [stop-start-continue-v1](https://github.com/BrickMMO/stop-start-continue-v1).
+The [parts-v1](https://github.com/BrickMMO/parts-v1) includes a basic PHP core also used in [flow-v1](https://github.com/BrickMMO/flow-v2) and [stop-start-continue-v1](https://github.com/BrickMMO/stop-start-continue-v1). The core is available in the [php-w3css-core](https://github.com/codeadamca/php-w3css-core) repo.
 
 There are twelve tables for this project provided by [Rebrickable](https://rebrickable.com/downloads/):
 
@@ -37,15 +37,19 @@ The database structure is as follows:
 
 ![BrickMMO Parts Schemea](/images/v1-schema.png)
 
+> [!NOTE]  
+> Review the database structure. Understand how themes are connected to sets, sets connected to pieces, etc...
 
+The repo currently includes a rough scafolding:
 
+| File | Description |
+| - | - | 
+| index.php | This file lists all the current themes. Each theme links to `theme.php` with a theme `id`. |
+| theme.php | This file includes details about the theme and a list of all sets within the theme. Each set links to `set.php` wtih a set `id`. |
+| set.php | This file includes details about the set and a list of all parts within the set. Each part links to `part.php` wtih a part `id`. |
+| part.php | This file includes details about the part and a list of sets using that part and colours the part is avaialable in. This page can link back to `set.php` with a set `id`. |
 
-
-
-
-There is an import script that imports a list of colours from the [Rebrickable API](https://rebrickable.com/api/v3/docs/) into the `colours` and `externals` tables. This file is located at `/import.php`.
-
-There is a home page named `index.php` that displays a list of the colours from the `colours` table.
+These files include no design. They rach output only a few fields with functional links. 
 
 *** 
 
@@ -53,28 +57,36 @@ There is a home page named `index.php` that displays a list of the colours from 
 
 1. **Design**
 
-    Using [Figma](https://www.figma.com/) (or your design tool of choice) mock up the application. The application should include three pages:
+    Using [Figma](https://www.figma.com/) (or your design tool of choice) mock up the application. The application should include the five pages (the four described above and one more display a minifigure).
 
     1. **Home Page**
 
-        A list of colours in a well presented format. Each colour could include the colour name, the RGB value, and/or a sample. Each colour should link to a profile page.
+        A list of all themes including theme name, a sample set image from this theme, and any other additional fields. This page content should somewhat mimic [https://rebrickable.com/sets/](https://rebrickable.com/sets/).
 
-    2. **Profile Page**
+    2. **Theme Page**
 
-        A page with all the details about a single colour. This could include the colour name, the RGB value, a sample of the colour, a sample Brick image, alternative names, and links to alternative sources (like [BrickLink](https://bricklink.com/), [BrickOwl](https://bricklink.com/), etc...). 
+        A theme profile including theme name, an image, and any other additional fields. Follwed by a list of all sets within the theme including set name, image, and any other additional fields. This page content should somewhat mimic [https://rebrickable.com/sets/star-wars/](https://rebrickable.com/sets/star-wars/).
 
-    3. **Conversion Page**
+    3. **Set Page**
 
-        A page that allows the visitor to enter a colour (name, RGB, or CMYK), and the form will display the closet colour(s) to the provided colour. The results should be displayed in a nice visual format.
+        A set profile including set name, an image, and any other additional fields. Follwed by a list of all parts within the set including part name, image, ID, and any other additional fields along with all minifigures within the set. This page content should somewhat mimic [https://rebrickable.com/sets/75359-1/332nd-ahsokas-clone-trooper-battle-pack/](https://rebrickable.com/sets/75359-1/332nd-ahsokas-clone-trooper-battle-pack/).
+
+    4. **Parts Page**
+
+        A part profile including part name, an image, ID, and any other additional fields. Follwed by a list of sets the part is included in and a list of colours the part is aviaable in. This page content should somewhat mimic [https://rebrickable.com/parts/79389/bracket-1-x-1-1-x-2/](https://rebrickable.com/parts/79389/bracket-1-x-1-1-x-2/).
+
+    5. **Minifigure Page**
+
+        A minifigure profile including minifigure name, an image, ID, and any other additional fields. Follwed by a list of sets the minifigure is included in and a list of parts the minifigure is made of. This page content should somewhat mimic [https://rebrickable.com/minifigs/fig-002476/archer-black-falcon-black-legs-black-hips-pointed-shield-chin-guard/](https://rebrickable.com/minifigs/fig-002476/archer-black-falcon-black-legs-black-hips-pointed-shield-chin-guard/).
 
     The design style should mimic that of the [Passive Aggressive Password Machine](https://trypap.com/):
 
-        - Nice large fonts
-        - Simple layout
-        - Well spaced out
-        - Simple forms
+    - Nice large fonts
+    - Simple layout
+    - Well spaced out
+    - Simple forms
 
-    This project will use [Bootstrap](https://getbootstrap.com/). Review the Bootstrap website and avalable components and incorporate these into your design. 
+    This project will use [W3.CSS](https://www.w3schools.com/w3css/). Review the W3.CSS website and avalable components and incorporate these into your design. 
 
     When complete, present your design to your instructor before moving on to the next step. 
 
@@ -88,71 +100,86 @@ There is a home page named `index.php` that displays a list of the colours from 
     
 3. **Database**
 
-    Using phpMyAdmin create a new database named `brickmmo_colours` and import the two SQL files in the `/imports` folder. You should now have two empty tables named `colours` and `externals`.
+    Using phpMyAdmin create a new database named `brickmmo_parts` and import eleven of the SQL files in the `/imports` folder. Do not import `inventory_parts.sql.gz` just yet.
 
-4. **Source Code**
+4. **Large SQL Imports**
 
-    Clone the [colours-v2](https://github.com/BrickMMO/colours-v2) repo into your MAMP root folder (or point MAMP to your cloned directory). Restart the server if needed. 
+    Try to import the `inventory_parts.sql.gz` file. Your browser will likely timeout. This is because browsers servers have a maximum file upload size of 2MB and the `inventory_parts.sql.gz` file is over 12MB. You will need to find a different method to import this file. Google the term `phpmyadmin inport large file` and see if you can implement a solution. 
 
-    Open up the `/env` file and change the database variables to `brickmmo_colours` and the MAMP defaults:
+5. **Source Code**
+
+    Clone the [parts-v1](https://github.com/BrickMMO/parts-v1) repo into your MAMP root folder (or point MAMP to your cloned directory). Restart the server if needed. 
+
+    Copy the `/.env.sample` file amd name it `/.env`. Change the database variables to `brickmmo_parts` and the MAMP defaults:
 
     ```php
     DB_HOST=localhost
-    DB_DATABASE=brickmmo_colours
+    DB_DATABASE=brickmmo_parts
     DB_USERNAME=root
     DB_PASSWORD=root
     ```
 
     At this point you can open open the BrickMMO Colours home page. It will be empty, but there should be no PHP errors. 
 
-5. **Rebrickable API**
-
-    Register for a [Rebrickable API](https://rebrickable.com/api/) key. Put the key ino the `.env` file:
-
-    ```php
-    REBRICKABLE_API_KEY=12345678901234567890123456789012
-    ```
-
-    Run the `import.php` script. This can be done by changing the URL to [http://localhost:8888/import.php](http://localhost:8888/import.php) on a Mac or [http://localhost/import.php](http://localhost/import.php] on a PC.
-
-    Open up phpMyAdmin and your tables should now be full of records.
-
 > [!TIP]  
-> Steps six through twelve have a project task in GitHub. Make sure to assign these tasks when starting. And then use these tasks to create your branch and a pull request when done.
+> Steps six through thirteen have a project task in GitHub. Make sure to assign these tasks when starting. And then use these tasks to create your branch and a pull request when done.
 
 6. **Home Page**
     
-    Create the home page. Review the [Rebrickable API](https://rebrickable.com/api/v3/docs/) and the `colours` and `externals` tables to see what data is avaiable to put on the home page. Make these changes to the `/index.php` file. Don't worry too much about the design yet. 
+    Modify the home page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the home page. Make these changes to the `/index.php` file. Don't worry too much about the design yet. 
 
 > [!NOTE]  
 > At this point do not worry about the design. Just use basic HTML, black text, and Times New Roman. No CSS needed. 
 
 7. **Profile Page**
 
-    On the home page you will link each colour to `\profile.php?id=1`. The number one will be replaced with the `id` value form the colours table. It will look something like this:
+    On the home page you will link each theme to `\theme.php?id=1`. The number one will be replaced with the `id` value form the theme table. It will look something like this:
 
     ```php
-    <?php while($colour = mysqli_fetch_assoc($result)): ?>
+    <?php while($theme = mysqli_fetch_assoc($result)): ?>
 
-        <a href="profile.php?id=<?=$colour['id']?>"><?=$colour['name']?></a>
+        <a href="theme.php?id=<?=$theme['id']?>"><?=$theme['name']?></a>
         
     <?php endwhile; ?>
     ```
 
-    Create the a page named `profile.php`. Write the PHP and HTML to display a basic colour profile. Use the code in `/index.php` as a starting point. 
+    Modify the `profile.php` page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the theme page.
 
     Add some of the following data:
 
-        - Colour Name
-        - RGB value
-        - Sample of the colour (there is an example of this in `/index.php`)
-        - Links to alternative sources (like [BrickLink](https://bricklink.com/), [BrickOwl](https://bricklink.com/), etc...)
+    - Colour ID
+    - Number of themes
+    - A sample image (you can grab one from a set)
+        
+    Include a list of sets including:
 
-    You will need to write two `SELECT` queries to fetch as much information about the selected colour from the database. They will need to incorporate the `$_GET['id']` variable into the query. 
+    - Set name
+    - Set ID
+    - Image
+    - Number of parts
+    - Release date
 
-8. **Sample Brick Image**
+8. **Set Page**
 
-    You can add a sample brick by using the [Rebrickable]() media. For example, the following URL:
+    On the theme page you will link each set to `\set.php?id=1`. The number one will be replaced with the `id` value form the set table. 
+
+    Modify the `set.php` page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the set page.
+
+    Add some of the following data:
+
+    - Set ID
+    - Number of parts
+    - Image
+        
+    Include a list of parts including:
+
+    - Part name
+    - Part ID
+    - Image
+    
+9. **Sample Brick Image**
+
+    You can add a sample brick by using the [Rebrickable](https://rebrickable.com/downloads/) media. For example, the following URL:
     
     ```
     https://cdn.rebrickable.com/media/thumbs/parts/ldraw/4/3003.png/85x85p.png
@@ -164,55 +191,71 @@ There is a home page named `index.php` that displays a list of the colours from 
 
     The image URL consists of the following parts:
 
-        - Rebrickable media URL: `https://cdn.rebrickable.com/media/thumbs/parts/ldraw/`
-        - The colour ID using the `rebrickable_id` value from the `colours` table: `<?=$colour['rebrickable_id']?>`
-        - The LEGO® brick ID using, you can look these up at the [LEGO® Pick-a-Brick Store](https://www.lego.com/en-ca/pick-and-build/pick-a-brick)
-        - And the width and height of the image
+    - Rebrickable media URL: `https://cdn.rebrickable.com/media/thumbs/parts/ldraw/`
+    - The colour ID using the `rebrickable_id` value from the `colours` table: `<?=$colour['rebrickable_id']?>`
+    - The LEGO® brick ID using, you can look these up at the [LEGO® Pick-a-Brick Store](https://www.lego.com/en-ca/pick-and-build/pick-a-brick)
+    - And the width and height of the image
 
-9. **Conversion API**
+10. **Part Page**
 
-    Create a file named `/api.php`. For now you can test this file by visiting [http://localhost:8888/api.php](http://localhost:8888/api.php) on a Mac or [http://localhost/api.php](http://localhost/api.php] on a PC. At this point it will be an empty page.
+    On the set page you will link each part to `\part.php?id=1`. The number one will be replaced with the `id` value form the part table. 
 
-    Copy the `include` statements from one of your other PHP files. 
+    Modify the `part.php` page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the part page.
 
-    ```php
-    <?php
+    Add some of the following data:
 
-    include('includes/connect.php');
-    include('includes/config.php');
-    include('includes/functions.php');
-    ```
+    - Part ID
+    - Image
+    
+    Include a list of sets the part is included in:
 
-    Add `?colour=336699` to your URL. Just to test the colour URL variable, in the `\api.php` file, output the colour provided in the URL. You will need to use `$_GET`.
+    - Part name
+    - Part ID
 
-    Add code that will convert the colour from the URL variableto the closest colour from the `colours` table. I would recommend incuding the three closest colours. **This is the hardest part!**
+    Link each part back to `/part.php?id=1`.
 
-    Output the three colours using JSON.
+    Include a list of minifigures the part is included in:
 
-10. **Conversion Tool**
+    - Minifigure name
+    - Minifigure ID
 
-    The last page needs to use the `/api.php` file to convert a provided colour to the closet LEGO® pallette colour. This process will follow these steps:
+    Link each set back to `/minifigure.php?id=1`.
 
-    1. The visitor will enter a colour name, RGB, or CMYK value into the form.
-    2. The visitor will click submit.
-    3. JavaScript will make an API call to `\api.php?colour=336699`. This API call will return a JSON list of the closest colours.
-    4. JavaScript will then read the result and display the results. 
+11. **Minifigure Page**
 
-    Create a page named `/convert.php`. Add a link on the home page to this new page. 
+    On the set and part page you will link each minifigure to `\minifigure.php?id=1`. The number one will be replaced with the `id` value form the minifigure table. 
 
-    Add the form to this page. 
+    Create a file named `minifigure.php` page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the minifigure page.
 
-    Add JavaScript to validate the colour entered into the form. On submit make an API call to `/api.php`. PParse the JSON response and display the top three colours. 
+    Add some of the following data:
 
-11. **Apply Design**
+    - Minifigure ID
+    - Minifigure Name
+    - Image
+        
+    Include a list of sets the minifigure is included in:
 
-    Apply the designs from stop one!
+    - Set name
+    - Set ID
 
-12. **About Colours** 
+    Link each set back to `/set.php?id=1`.
 
-    Update the [colours-about](https://github.com/BrickMMO/colours-about) Markdown! Add your names to the `v2.markdown` page. 
+    Include a list of parts the minifigure requires:
 
-[&#10132; Back to V2](/colours-about/v2
+    - Part name
+    - Part ID
+
+    Link each part back to `/part.php?id=1`.
+
+12. **Apply Design**
+
+    Apply the designs from step one!
+
+13. **About Parts** 
+
+    Update the [parts-about](https://github.com/BrickMMO/parts-about) Markdown! Add your names to the `v1.markdown` page. 
+
+[&#10132; Back to V2](/coloupartsrs-about/v2)
 
 ---
 
