@@ -1,0 +1,31 @@
+<style>@import url("//readme.codeadam.ca/readme.css");</style>
+
+## Version 2 - Second Draft
+
+Completed: November 2023
+
+During phase one a basic parts directory will be created. Over the next few versions the BrickMMO Parts tool will expand to include advanced search tools, APIs, and interactivity.
+
+### Related Links
+
+- [Version 1 GitHub Repo](https://github.com/BrickMMO/parts-v1)
+
+### Process
+
+For students developing this project you may follow this process:
+
+- [Process (Markdown)](v1/parts-v1-process.markdown)
+
+### Contributors
+
+| | Name | Type | GitHub |
+| ------------------------------------- | ----------- | ------- | ----------------------------------------------------- |
+| ![codeadamca](faculty/codeadamca.png) | Adam Thomas | Faculty | [https://contributions.brickmmo.com/faculty/codeadamca](https://contributions.brickmmo.com/faculty/codeadamca) |
+
+[&#10132; Back to About](/parts-about/)
+
+---
+
+<a href="https://brickmmo.com">
+<img src="https://brickmmo.com/images/brickmmo-logo-horizontal.jpg" width="100">
+</a>
