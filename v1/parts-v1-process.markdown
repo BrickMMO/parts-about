@@ -131,7 +131,7 @@ These files include no design. They rach output only a few fields with functiona
 > [!NOTE]  
 > At this point do not worry about the design. Just use basic HTML, black text, and Times New Roman. No CSS needed. 
 
-7. **Profile Page**
+7. **Theme Page**
 
     On the home page you will link each theme to `\theme.php?id=1`. The number one will be replaced with the `id` value form the theme table. It will look something like this:
 
