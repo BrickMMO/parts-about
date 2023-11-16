@@ -121,15 +121,15 @@ These files include no design. They rach output only a few fields with functiona
 
     At this point you can open open the BrickMMO Colours home page. It will be empty, but there should be no PHP errors. 
 
-> [!TIP]  
-> Steps six through thirteen have a project task in GitHub. Make sure to assign these tasks when starting. And then use these tasks to create your branch and a pull request when done.
+        > [!TIP]  
+        > Steps six through thirteen have a project task in GitHub. Make sure to assign these tasks when starting. And then use these tasks to create your branch and a pull request when done.
 
 6. **Home Page**
     
     Modify the home page. Review the [Rebrickable Database Structure](https://rebrickable.com/api/v3/docs/) and the tables in phpMyAdmin to see what data is avaiable to put on the home page. Make these changes to the `/index.php` file. Don't worry too much about the design yet. 
 
-> [!NOTE]  
-> At this point do not worry about the design. Just use basic HTML, black text, and Times New Roman. No CSS needed. 
+        > [!NOTE]  
+        > At this point do not worry about the design. Just use basic HTML, black text, and Times New Roman. No CSS needed. 
 
 7. **Theme Page**
 
