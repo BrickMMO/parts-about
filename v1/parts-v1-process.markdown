@@ -2,7 +2,7 @@
 
 ## Process
 
-This applciation will provide a directory with the following information:
+This appliciation will provide a directory with the following information:
 
 1. A list of LEGO® themes.
 2. Information on a theme and a list of sets within a chosen theme.
