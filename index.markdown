@@ -4,6 +4,13 @@
 
 This website provides a directory of all LEGO® themes, sets, parts, and minifigures. Quite similar to [Brick Owl](https://www.brickowl.com/) and [Rebrickable](https://rebrickable.com/). 
 
+![Brickmo town lego image](/images/brickmmo.png)
+
+ > **Note:** 
+ > The current site is in development. An image can be found below.
+
+![parts about homepage](/images/home-screen.png)
+
 - [BrickMMO Parts](https://parts.brickmmo.com)
 
 ## [Version 1 - Rough Draft](v1)
