@@ -7,7 +7,7 @@ Completed: April 2024
 During phase one a basic parts directory will be created. Over the next few versions the BrickMMO Parts tool will expand to include advanced search tools, APIs, and interactivity.
 
 ### Related Links
-
+- [BrickMMO Parts](https://parts.brickmmo.com)
 - [Version 1 GitHub Repo](https://github.com/BrickMMO/parts-v1)
 
 ### Process
