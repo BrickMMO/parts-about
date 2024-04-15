@@ -2,14 +2,20 @@
 
 <style>@import url("//readme.codeadam.ca/readme.css");</style>
 
-This website provides a directory of all LEGO® themes, sets, parts, and minifigures. Quite similar to [Brick Owl](https://www.brickowl.com/) and [Rebrickable](https://rebrickable.com/). 
-
-![Brickmo town lego image](/images/brickmmo.png)
+Parts is a BrickMMO project repository
 
  > **Note:** 
  > The current site is in development. An image can be found below.
 
-![parts about homepage](/images/home-screen.png)
+![Parts About Homepage](/images/theme.png)
+
+This application will provide a directory with the following information:
+
+1. A list of LEGO® themes.
+2. Information on a theme and a list of sets within a chosen theme.
+3. Information on a set and parts and minifigures inlcuded in the chosen set.
+4. Information on individual parts.
+5. Information on individual minifigures.
 
 - [BrickMMO Parts](https://parts.brickmmo.com)
 

@@ -2,12 +2,12 @@
 
 ## Version 1 - First Draft
 
-Completed: November 2023
+Completed: April 2024
 
 During phase one a basic parts directory will be created. Over the next few versions the BrickMMO Parts tool will expand to include advanced search tools, APIs, and interactivity.
 
 ### Related Links
-
+- [BrickMMO Parts](https://parts.brickmmo.com)
 - [Version 1 GitHub Repo](https://github.com/BrickMMO/parts-v1)
 
 ### Process
@@ -21,11 +21,8 @@ For students developing this project you may follow this process:
 | | Name | Type | Contributions |
 | - | - | - | - |
 | ![codeadamca](faculty/codeadamca.png) | Adam Thomas | Faculty | [codeadamca](https://contributions.brickmmo.com/faculty/codeadamca) |
-| - | - | - | - |
 | ![Milin](students/milinvaniyawala.png) | Milin Vaniyawala | Student | [milinvaniyawala](https://contributions.brickmmo.com/students/milinvaniyawala) |
-| - | - | - | - |
 | ![Yash](students/yashmodi9998.jpg) | Yash Modi| Student| [yashmodi9998](https://contributions.brickmmo.com/students/yashmodi9998) |
-| - | - | - | - |
 |  | Khushiben Patel | Student |  |
 
 [&#10132; Back to About](/parts-about/)
